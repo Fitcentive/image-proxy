@@ -1,5 +1,7 @@
 # imageproxy
 
+Note - this is a fork of https://github.com/willnorris/imageproxy
+
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue)](https://pkg.go.dev/willnorris.com/go/imageproxy)
 [![Test Status](https://github.com/willnorris/imageproxy/workflows/tests/badge.svg)](https://github.com/willnorris/imageproxy/actions?query=workflow%3Atests)
 [![Test Coverage](https://codecov.io/gh/willnorris/imageproxy/branch/main/graph/badge.svg)](https://codecov.io/gh/willnorris/imageproxy)
@@ -388,3 +390,13 @@ imageproxy is copyright its respective authors. All of my personal work on
 imageproxy through 2020 (which accounts for the majority of the code) is
 copyright Google, my employer at the time.  It is available under the [Apache
 2.0 License](./LICENSE).
+
+---
+
+## Deploy to minikube cluster
+
+- `docker pull willnorris/imageproxy:v0.8.0`
+- `docker tag willnorris/imageproxy:v0.8.0 image-proxy:1.0` (latest version is `v0.11.2`)
+- `kubectl apply -f deployment/minikube`
+
+Note: - This requires `image-service` to be running on port `10260` in the same cluster.
